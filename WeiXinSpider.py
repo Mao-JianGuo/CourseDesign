@@ -1,16 +1,12 @@
 #coding:utf-8
 #python3
-import json
 
 import requests
 import random
 from bs4 import BeautifulSoup
-import os
-import re
 import json
 from urllib import parse
-from urllib import request
-
+import SnuidGenerator
 
 """
 全局变量区域
@@ -76,12 +72,14 @@ def get_content(url):
         cookies = {
             "CXID" : "1DB214E49FB5A670216D942812AE4EF5",
             "ad":"uyllllllll2NN1QFlllllVCTSBGlllllTHal9Zllll9llllljOxlw@@@@@@@@@@@",
+            #搜狗服务器分配的ID，短时间内不变，作用域Session
             "SUID":"13C0D2DE4C238B0A5D774593000E0288",
             "SUV":"006B15E6D229600D5D8988FFD3AC4033",
             "SMYUV":"1569480527228598",
             "UM_distinctid":"16d6c544d7f4d-0258fb17966ea6-67e1b3f-1fa400-16d6c544d813ac",
             "ABTEST":"5|1570673115|v1",
-            "SNUID":"4E652DD10401978E2731EC640456AD67",
+            #防反爬重点，每个SNUID达到使用次数限制后，需更新才能继续访问，不然跳转到验证码页面
+            "SNUID": SnuidGenerator.getSnuid(),
             "IPLOC":"CN5101",
             "JSESSIONID":"aaajVZjidb_ttcYsqKq1w",
             "successCount":"2|Thu, 10 Oct 2019 06:52:14 GMT"

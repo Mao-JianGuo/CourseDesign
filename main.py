@@ -1,16 +1,11 @@
 # coding:utf-8
 # python3
-
-from WeiXinSpider import WeiXinSpider
 from WeiXinSpider import WeiXinSearch
-from WeiXinSpider import WeiXinArticle
 from PageParsing import PageParsing
-import requests
 from urllib.parse import quote
 from bs4 import BeautifulSoup
 import requests
 import random
-import json
 
 def get_ip_list(url, headers):
     web_data = requests.get(url, headers=headers)
