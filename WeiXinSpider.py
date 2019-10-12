@@ -61,14 +61,21 @@ def get_random_ip(ip_list):
     proxies = {'http': proxy_ip}
     return proxies
 
+
+def get_Referer():
+    referer= 'https://weixin.sogou.com/weixin?type=2&query=%E5%90%8C%E4%BB%81%E5%A0%82&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=0&sourceid=sugg&sut=0&sst0=1570865981022&lkt=0%2C0%2C0&p=40040108'
+    return referer
+
 # 用于获取网页的基本内容
 def get_content(url):
     try:
         # url = 'http://www.xicidaili.com/nn/'
         headers = {
             #"User-Agent": random.choice(user_agent_list)
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+            "Referer" : get_Referer()
         }
+
         cookies = {
             "CXID" : "1DB214E49FB5A670216D942812AE4EF5",
             "ad":"uyllllllll2NN1QFlllllVCTSBGlllllTHal9Zllll9llllljOxlw@@@@@@@@@@@",

@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d75b3f-dca4-4f85-ac1e-63125af26de5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SnuidGenerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SnuidGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SnuidGenerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeiXinSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeiXinSpider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/同仁堂.html" beforeDir="false" afterPath="$PROJECT_DIR$/同仁堂.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxies.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/同仁堂.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,8 +125,24 @@
       <workItem from="1570672229866" duration="226000" />
       <workItem from="1570672491853" duration="356000" />
       <workItem from="1570672860698" duration="20922000" />
-      <workItem from="1570760167487" duration="2856000" />
+      <workItem from="1570760167487" duration="3051000" />
+      <workItem from="1570850903847" duration="3530000" />
     </task>
+    <task id="LOCAL-00001" summary="增加防反爬机制">
+      <created>1570763048098</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570763048098</updated>
+    </task>
+    <task id="LOCAL-00002" summary="增加获取公众号wxid接口">
+      <created>1570864890916</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570864890916</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +171,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加防反爬机制" />
+    <MESSAGE value="增加获取公众号wxid接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加获取公众号wxid接口" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <default-breakpoints>
@@ -152,7 +188,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/_version2_$main.coverage" NAME="main Coverage Results" MODIFIED="1570763000368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/_version2_$SnuidGenerator.coverage" NAME="SnuidGenerator Coverage Results" MODIFIED="1570762897827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/_version2_$main.coverage" NAME="main Coverage Results" MODIFIED="1570866307450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/_version2_$SnuidGenerator.coverage" NAME="SnuidGenerator Coverage Results" MODIFIED="1570865253205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

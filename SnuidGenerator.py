@@ -23,7 +23,6 @@ def getWechatIdByChineseWord(name):
     #for test
     name_urlEncode  = quote(name, 'utf-8')
     url='https://weixin.sogou.com/weixin?zhnss=1&type=1&ie=utf8&query={}'.format(name)
-
     try:
         # url = 'http://www.xicidaili.com/nn/'
         headers = {
@@ -47,7 +46,10 @@ def getWechatIdByChineseWord(name):
         }
         r = requests.get(url, headers=headers, cookies=cookies)
         wxid = json.loads(r.content.decode('utf-8'))
-        return wxid
+        return wxid.get('openid')
     except Exception as e:
         print(e)
         exit(1)
+
+if __name__ =='__main__':
+    print(getWechatIdByChineseWord('为自己健康代言'))

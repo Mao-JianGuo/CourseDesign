@@ -6,6 +6,7 @@ from urllib.parse import quote
 from bs4 import BeautifulSoup
 import requests
 import random
+import SnuidGenerator
 
 def get_ip_list(url, headers):
     web_data = requests.get(url, headers=headers)
@@ -28,14 +29,14 @@ def get_random_ip(ip_list):
 
 if __name__ == "__main__":
     # WeiXinSearch().main()
-    # url = 'http://www.xicidaili.com/nn/'
-    # 初始化代理
-
 
     # key = input('请输入搜索词:')
     key = "同仁堂"
-    search = quote(key, 'utf-8')
-    search_url = "http://weixin.sogou.com/weixin?type=2&ie=utf8&s_from=hotnews&query={}".format(search)
+    usip = '为自己健康代言'
+    wxid= SnuidGenerator.getWechatIdByChineseWord(usip)
+    key_urlEncoded = quote(key, 'utf-8')
+    usip_urlEncoded = quote(usip, 'utf-8')
+    search_url = "http://weixin.sogou.com/weixin?type=2&ie=utf8&s_from=hotnews&query={}&tsn=0&ft=&et=&interation=&wxid={}&usip={}".format(key_urlEncoded, wxid, usip_urlEncoded)
     print(search_url)
     url_list = WeiXinSearch().module_auto(search_url)
     #print("url_list:\n"+url_list)
