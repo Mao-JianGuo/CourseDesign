@@ -24,31 +24,36 @@ def getWechatIdByChineseWord(name):
     name_urlEncode  = quote(name, 'utf-8')
     url='https://weixin.sogou.com/weixin?zhnss=1&type=1&ie=utf8&query={}'.format(name)
     try:
-        # url = 'http://www.xicidaili.com/nn/'
         headers = {
             # "User-Agent": random.choice(user_agent_list)
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"
         }
         cookies = {
-            "CXID": "1DB214E49FB5A670216D942812AE4EF5",
-            "ad": "uyllllllll2NN1QFlllllVCTSBGlllllTHal9Zllll9llllljOxlw@@@@@@@@@@@",
+            "CXID": "9A9BB967E5EE5412594BC70A108AB335",
+            "ad": "jV9rvyllll2NoH52lllllVLA1D1lllll1AOuvkllll9lllllRylll5@@@@@@@@@@@",
             # 搜狗服务器分配的ID，短时间内不变，作用域Session
-            "SUID": "13C0D2DE4C238B0A5D774593000E0288",
-            "SUV": "006B15E6D229600D5D8988FFD3AC4033",
+            "SUID": "4A6629D23108990A000000005DA2D391",
+            "SUV": "1570952081661135",
             "SMYUV": "1569480527228598",
-            "UM_distinctid": "16d6c544d7f4d-0258fb17966ea6-67e1b3f-1fa400-16d6c544d813ac",
-            "ABTEST": "5|1570673115|v1",
+            #"UM_distinctid": "16d6c544d7f4d-0258fb17966ea6-67e1b3f-1fa400-16d6c544d813ac",
             # 防反爬重点，每个SNUID达到使用次数限制后，需更新才能继续访问，不然跳转到验证码页面
             "SNUID": getSnuid(),
             "IPLOC": "CN5101",
-            "JSESSIONID": "aaajVZjidb_ttcYsqKq1w",
-            "successCount": "2|Thu, 10 Oct 2019 06:52:14 GMT"
+            "sct":"2",
+            "ld":"1kllllllll2NoHnNlllllVLA1DYlllll1AOuvkllllwlllllRylll5@@@@@@@@@@",
+            "LSTMV":"512%2C85",
+            "LCLKINT": "2584",
+            "ABTEST":"2|1570952139|v1",
+            "PHPSESSID":"2nnnaei7mhef1tg94jsv7cc7b2",
+            "seccodeRight":"success;",
+            "successCount":"1|Sun, 13 Oct 2019 07:41:09 GMT",
+            "JSESSIONID":"aaapDWqSz1d4befSLir1w"
         }
         r = requests.get(url, headers=headers, cookies=cookies)
         wxid = json.loads(r.content.decode('utf-8'))
         return wxid.get('openid')
     except Exception as e:
-        print(e)
+        print('[Error]:API:getWechatIdByChineseWord')
         exit(1)
 
 if __name__ =='__main__':

@@ -1,5 +1,6 @@
 # coding:utf-8
 # python3
+from DataStorage import DataStorage
 from WeiXinSpider import WeiXinSearch
 from PageParsing import PageParsing
 from urllib.parse import quote
@@ -47,11 +48,10 @@ if __name__ == "__main__":
     for i in range(0, len(url_list)):
         html_doc = requests.get(url_list[i]).text
         p = PageParsing(html_doc)
-        print('第'+str(i)+'页解析完毕')
+        print('['+str(round(((i/len(url_list))*100)))+'%] '+'第'+str(i)+'页解析完毕')
         if(p.get_dict()['content'] != '' and p.flag == 1 ):
             result.append(p.get_dict())
         flag = i
-    ##最后结果在result数组中
-    for j in result:
-        print(j)
-        print()
+
+    dataFile = DataStorage(key, usip, 'update')
+    dataFile.writeData(result)
