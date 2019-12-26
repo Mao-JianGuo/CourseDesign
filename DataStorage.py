@@ -1,10 +1,16 @@
 ''' 爬虫数据IO处理类'''
 import os
+# 数据存储类， 实现全量更新和增量更新
+#全量更新：新建或完全覆盖历史的爬取数据，适用于第一次搜索特定的关键词和公众号时使用
+#增量更新：对特定关键词或公众号进行数据爬取后，在历史爬取的数据基础上追加新增的数据，适合实时监控公众号文章时使用
+#增量更新这个功能，主要是为了针对任务书所提到的对公众号实时监控并更新爬取数据而开发的
 class DataStorage(object):
     # filepath
     # type#:cover\update
     def __init__(self, key, usip_word, writeType):
         self.filepath = '.'+os.sep+'data'+os.sep+'key:' + key + 'word:' + usip_word + '.txt'
+        self.key = key
+        self.usip_word = usip_word
         print(self.filepath)
         self.type = writeType
 
@@ -27,7 +33,7 @@ class DataStorage(object):
         try:
             file = open(self.filepath, 'w')
             for x in range(len(data)):
-                file.write(str(data[x]) + '\n')
+                file.write('{'+'\'key\': '+self.key+'  \'usip\': ' + self.usip_word + '  content: ' + str(data[x]) + '\n')
         except IOError as e:
             print(e)
         finally:
@@ -62,8 +68,3 @@ class DataStorage(object):
         else:
             self.__coverWrite(data)
 
-
-if __name__ == '__main__':
-    test = DataStorage('同仁堂', '为自己健康代言', 'update')
-    data = ['123', '132']
-    test.writeData(data)

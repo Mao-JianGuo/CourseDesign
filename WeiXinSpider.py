@@ -1,5 +1,6 @@
 #coding:utf-8
 #python3
+import time
 
 import requests
 import random
@@ -34,6 +35,7 @@ user_agent_list = [
     ]
 
 global proxies
+
 
 def get_ip_list(url, headers):
     web_data = requests.get(url, headers=headers)
@@ -80,16 +82,16 @@ def get_content(url):
             "CXID" : "1DB214E49FB5A670216D942812AE4EF5",
             "ad":"uyllllllll2NN1QFlllllVCTSBGlllllTHal9Zllll9llllljOxlw@@@@@@@@@@@",
             #搜狗服务器分配的ID，短时间内不变，作用域Session
-            "SUID":"13C0D2DE4C238B0A5D774593000E0288",
-            "SUV":"006B15E6D229600D5D8988FFD3AC4033",
+            "SUID":"65FD73CA3108990A000000005E044186",
+            "SUV":"1577337223009084",
             "SMYUV":"1569480527228598",
             "UM_distinctid":"16d6c544d7f4d-0258fb17966ea6-67e1b3f-1fa400-16d6c544d813ac",
             "ABTEST":"5|1570673115|v1",
             #防反爬重点，每个SNUID达到使用次数限制后，需更新才能继续访问，不然跳转到验证码页面
             "SNUID": SnuidGenerator.getSnuid(),
             "IPLOC":"CN5101",
-            "JSESSIONID":"aaajVZjidb_ttcYsqKq1w",
-            "successCount":"2|Thu, 10 Oct 2019 06:52:14 GMT"
+            "JSESSIONID":"aaalw50R4h-H-bQWvfD8w",
+            "successCount":"1|Thu, 26 Dec 2019 06:48:53 GMT"
         }
         ip_list = get_ip_list(url, headers=headers)
         proxies_t = random.choice(proxies)
@@ -106,7 +108,7 @@ def get_content(url):
 # 存储文件的内容
 def store_file(file_name, content):
     open(file_name, "wb").write(str(content).encode())
-    print("Save file succesfully!")
+    #print("Save file succesfully!")
 
 class WeiXinSpider():
     def __init__(self):
@@ -114,6 +116,8 @@ class WeiXinSpider():
         self.weixin_search_url = "https://weixin.sogou.com/"
         # 热点消息
         self.hot_topic_list = []
+
+
 
     def hot_word_search_analysis(self, homepageContent):
         hpSoup = BeautifulSoup(homepageContent, "html.parser")
@@ -140,6 +144,7 @@ class WeiXinSpider():
             self.hot_word_search_analysis(get_content(self.weixin_search_url))
         return self.hot_topic_list
 
+
     def main(self):
         # result = get_content(self.weixin_search_url)
         # store_file("saerch.html", result)
@@ -165,6 +170,8 @@ class WeiXinSearch():
         url_code = parse.quote(search_word)
         self.__search_url = "http://weixin.sogou.com/weixin?type=2&query={}".format(url_code)
 
+    def initParams(self):
+        time.sleep(1.5)
 
     #传入需要搜索的网址
     def set_search_url(self, url):
@@ -210,6 +217,7 @@ class WeiXinSearch():
         return self.article_url_list
 
 
+
     def __search_page_article(self, url):
         page_content = get_content(url)
         soup = BeautifulSoup(page_content, "html.parser")
@@ -225,14 +233,35 @@ class WeiXinSearch():
         # 定位所有的 a 标签
         h3_all_div = article_div.find_all("h3")
         url_list = []
+        content_list = []
         for i in h3_all_div:
-            #url = i.a.get("href")
             url = i.a.get("data-share")
-            url_list.append(url)
+            url_list.append('https://weixin.sogou.com/' + url)
         if len(url_list)==0:
             print("Wrong")
             exit(0)
-        return url_list
+        return content_list
+
+    def get_page_content(self, url):
+        page_content = get_content(url)
+        soup = BeautifulSoup(page_content, "html.parser")
+        all_div = soup.find_all("ul")
+        # 锁定 article 的全部标签的位置
+        article_div = None
+        for divi in all_div:
+            if divi["class"][0] == "news-list":
+                article_div = divi
+        if article_div == None:
+            print("Wrong!")
+            exit(0)
+        p_all_div = article_div.find_all("p")
+        content_list = []
+        for i in p_all_div:
+            content_list.append(i.text)
+        if len(content_list) == 0:
+            print("Wrong")
+            exit(0)
+        return content_list
 
     def get_page_url_list(self):
         return self.page_url_list
@@ -242,9 +271,10 @@ class WeiXinSearch():
         self.set_search_url(search_url)
         self.__get_search_page_content()
         self.__get_page_list()
-        self.list = self.get_article_list()
-        self.self_list = self.list
-        li = self.self_list
+        #self.list = self.get_article_list()
+        #self.self_list = self.list
+        #li = self.self_list
+        li = self.page_url_list
         return li
         # fileObject = open('url_3.txt','w')
         # for i in li:

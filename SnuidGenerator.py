@@ -7,13 +7,19 @@ from urllib.parse import quote
 import json
 import requests
 import re
-
+#防反爬取措施方案有两种
+#1.使用代理池模拟数量众多的真实用户去爬取数据：ipProxy类实现此功能
+#优点：从物理层面绕过防反爬机制
+#缺点：免费的代理池不稳定，容易失效，且代理数量有限，存在瓶颈
+#2.经过对搜狗搜索引擎的访问机制和防爬机制的研究，我们发现搜狗会对同一ip的访问进行频率限制，并且检测是真实的用户访问还是爬虫
+#最重要的鉴别字段是在请求头中设置的Cookie其中的snuid字段，该字段有一定的生成规则，并且在使用达到100次之后会失效，经过对搜狗源码的分析，我们找到了实时更新snuid的方法
+#到此，只要访问达到100次之后，调用该接口即可更新snuid，可以实现单一ip无限访问
 def getSnuid():
     url="https://www.sogou.com/web?query=333&_asf=www.sogou.com&_ast=1488955851&w=01019900&p=40040100&ie=utf8&from=index-nologin"
     headers={
         "Cookie":"ABTEST=5|1570673115|v1;IPLOC=CN5101;SUID=13C0D2DE4C238B0A5D774593000E0288;JSESSIONID=aaajVZjidb_ttcYsqKq1w;SUIR=1488956269"
     }
-    f=requests.head(url,headers=headers).headers
+    f=requests.head(url, headers=headers).headers
     tmp_str = f._store.get('set-cookie')[1]
     snuid = re.search('SNUID=.+?;',tmp_str,0).group()
     return snuid[6:-1]
@@ -57,4 +63,5 @@ def getWechatIdByChineseWord(name):
         exit(1)
 
 if __name__ =='__main__':
-    print(getWechatIdByChineseWord('为自己健康代言'))
+    #print(getWechatIdByChineseWord('为自己健康代言'))
+    print(getSnuid())

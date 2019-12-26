@@ -21,13 +21,13 @@
         var passportUserId = "";
         var oldQuery = "同仁堂";
         var gbkQuery = "%CD%AC%C8%CA%CC%C3";
-        var uuid = "10e4cbba-5b00-414d-8513-b2ec2d424b4f";
+        var uuid = "ed92659d-aa21-4958-837f-54516dffebd2";
         var keywords_string = "同仁堂";
         var sab = "5";
         var keywords = oldQuery.split(' ');
-        var now = 1570976314389;
+        var now = 1577349364603;
         var idc = "sjs";
-        var clientIp = "210.41.102.74";
+        var clientIp = "113.54.243.240";
         var isIpad = false;
         //var article_anti_url = "";
     </script>
@@ -38,34 +38,35 @@
     <script src="/js/jquery-1.11.0.min.js" charset="gbk"></script>
     <script src="/new/pc/js/https_util.min.js?v=20180607"></script>
     <script src="/js/lib/juicer-min.js"></script>
-    <script src="/new/weixin/js/common.min.js?v=20180607"></script>
+    <script src="/new/weixin/js/common.min.js?v=20191216"></script>
     <script src="/new/pc/js/common.min.js?v=20180607"></script>
     
     <script>
         var uigs_para = {
-            "uigs_t": "1570976314389",
+            "uigs_t": "1577349364603",
             "uigs_productid": "vs_web",
             "terminal"      : "web",
             "vstype"        : "weixin",
             "pagetype"      : "result",
             "channel"       : "result_article",
-            "s_from"        : "hotnews",
+            "s_from"        : "input",
             "sourceid"      : "",
             "type"          : "weixin_search_pc",
             "uigs_cookie"   : "SUID,sct",
-            "uuid"          : "10e4cbba-5b00-414d-8513-b2ec2d424b4f",
+            "uuid"          : "ed92659d-aa21-4958-837f-54516dffebd2",
             "query"         : "同仁堂",
             "weixintype"    : "2",
             "exp_status"    : "-1",
             "exp_id_list"   : "0_0",
-            "wuid"          : "006B15E6D229600D5D8988FFD3AC4033",
-            "snuid"         : "BF93DD26F5F1603F98EA18F3F5CEC8C3",
+            "wuid"          : "1577337223009084",
+            "snuid"         : "B7B47E364842D2D00CC1231948FC2AEB",
             "rn"            : 1,
             "login"         : passportUserId ? "1" : "0",
             "uphint"        : 1,
             "bottomhint"    : 1,
             "page"          : "1"
         };
+        $.get('https://weixin.sogou.com/approve?uuid=' + window.uigs_para.uuid + '&token=' + "04A5A0CEB7B47E364842D2D00CC1231948FC2AEB5E0470F4" + '&from=search');
     </script>
 </head>
 <body>
@@ -135,16 +136,6 @@
     <div class="wrapper" id="wrapper">
         <div class="main-left" id="main">
             
-<div class="dy-pop2 dy-pop5 float" id="share_box" style="display: none">
-    <a href="javascript:void(0)" class="close" data-except="1" uigs="other_float_share_close"></a>
-    <div class="fxico-box">
-        <a href="javascript:void(0)" class="sina" data-except="1" uigs="other_float_share_sina"></a>
-        <a href="javascript:void(0)" class="renren" target="_blank" data-except="1" uigs="other_float_share_renren"></a>
-        <a href="javascript:void(0)" class="douban" target="_blank" data-except="1" uigs="other_float_share_douban"></a>
-    </div>
-</div>
-
-
 <div class="dy-pop2 dy-pop5 float" id="erweima_box" style="display: none"></div>
 <script type="text/template" id="erweima_tpl">
     <a href="javascript:void(0)" class="close" data-except="1" uigs="other_float_weixin_close"></a>
@@ -159,69 +150,17 @@
         ft : '',
         et : '',
         interation : '',
-        wxid : 'oIWsFt1H5Ot6OxmZjBWhC7UQq9M0',
-        usip : '为自己健康代言'
+        wxid : '',
+        usip : ''
     };
-    var from_tool = '1';
+    var from_tool = '0';
 </script>
 <div class="wx-topbox">
     <div class="all-time">
-        <div class="all-time-y2 all-time-y2-cur">
+        <div class="all-time-y2 ">
             <div class="all-time-y all-time-y-v1" id="text">
-                以下内容来自微信公众平台<div class="tool" id="tool_show"><a href="javascript:void(0)" uigs="select_show">搜索工具</a></div>
+                以下内容来自微信公众平台
             </div>
-            
-                <div class="all-time-y" id="tool">
-                    <span class="all-wy-box">
-                        <a href="javascript:void(0)" class="btn-time" id="time" data-except="1">全部时间</a>
-                        <div class="time-box float" style="width:120px; left:0px; display: none;">
-                            <i></i>
-                            <a href="javascript:void(0)" class="time-range" data-type="0" uigs="select_time_all">全部时间</a>
-                            <a href="javascript:void(0)" class="time-range" data-type="1" uigs="select_time_day">一天内</a>
-                            <a href="javascript:void(0)" class="time-range" data-type="2" uigs="select_time_week">一周内</a>
-                            <a href="javascript:void(0)" class="time-range" data-type="3" uigs="select_time_month">一月内</a>
-                            <a href="javascript:void(0)" class="time-range" data-type="4" uigs="select_time_year">一年内</a>
-                            <div class="zdy">
-                                <span>自定义</span>
-                                <input type="text" id="date_start" placeholder="从">
-                                <input type="text" id="date_end" placeholder="至">
-                                <p class="input-box-err" style="display: none;">时间格式错误</p>
-                                <a href="javascript:void(0)" class="enter" id="time_enter" data-except="1" uigs="select_time_zdy">确认</a>
-                            </div>
-                        </div>
-                    </span>
-                    <span class="line"></span>
-                    <span class="all-wy-box">
-                        <a href="javascript:void(0)" class="btn-time" id="type" data-except="1">全部类型</a>
-                        <div class="time-box float" style="left: -19px; display: none;">
-                            <form action="javascript:void(0)" data-except="1">
-                                <i></i>
-                                
-                                <span><input type="checkbox" class="check" value="458754" id="check_pic" data-except="1"><label for="check_pic" data-except="1">图集</label></span>
-                                
-                                <span><input type="checkbox" class="check" value="458756" id="check_video" data-except="1"><label for="check_video" data-except="1">含视频</label></span>
-                                <a href="javascript:void(0)" class="enter" id="type_enter" data-except="1" uigs="select_type_yes">确认</a>
-                            </form>
-                        </div>
-                    </span>
-                    <span class="line"></span>
-                    <span class="all-wy-box">
-                        <a href="javascript:void(0)" class="btn-time" id="search" data-except="1">账号内搜索</a>
-                        <div class="time-box float" style="width:200px; left:-116px; display: none;">
-                            <form action="javascript:void(0)">
-                                <i></i>
-                                <span class="input-box">
-                                    <input type="text" class="s-sea" placeholder="输入公众号或微信号" data-except="1">
-                                    <a href="javascript:void(0)" id="search_enter" data-except="1" uigs="select_search_yes"></a>
-                                </span>
-                                <p class="input-box-err" style="display: none;">没有找到相应的公众号</p>
-                            </form>
-                        </div>
-                    </span>
-                    <span class="line"></span>
-                    <div class="tool" id="tool_hide" style="display: none"><a href="javascript:void(0)" uigs="select_hide">收起工具</a></div>
-                    <div class="tool tool-v1" id="tool_clear" style="display: none"><a href="javascript:void(0)" uigs="select_clear">取消筛选</a></div>
-                </div>
             
         </div>
     </div>
@@ -236,20 +175,17 @@
 <ul class="news-list">
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_0" d="ab735a258a90e8e1-6bee54fcbd896b2a-c3a28d0e5d509cae65cf406df674bbf3">
+		<li id="sogou_vr_11002601_box_0" d="ab735a258a90e8e1-6bee54fcbd896b2a-6c37bada2519d202b956f8d3e8514750">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8TyEKgLBqnnUa659Ns4LQqJF1ZdUO6NaPhusS9ChjAM2MeAcREXROixPn2d3p5_nS1tWhHOvqB7b7O7CMumNfjBl-J22At8dJ53MEvRNrFxP7A7hcSIGuJkNGbbB75bUeA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_0"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUfCE78LdrEwzq3CwwJnydnQzP9LOZUk8Vciaq1Kb48v2MXIiaxq4ykbLzOJUAChRbfB7Xicicjh9eaOCg/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9hd-s78VY-aLf68dNqBPygdBsGbasaTA2m22kLpcRPuGMmBA3m1sdF6tAOAwxNypCIwS0BnM8KxNAMmokBoXgsvAe82Retpx_rUwzxAcTVkIPl6LiD2NdtSQtNHU7zmxb7Siv7GmwkEB6mh-k-1F2QXsCO8zZaAnrHn9S3jS3q5qE8RsmObDbtQ..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_0"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/6GsabUfPPGhJAicoia4jbZLZzicSj6W2LnibJoHbTMicAe2JunUyMhpheUSCzibR502BJ2YCRNNd0Mpzia6S7NU1f0ryQ/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8TyEKgLBqnnUa659Ns4LQqJF1ZdUO6NaPhusS9ChjAM2MeAcREXROixPn2d3p5_nS1tWhHOvqB7b7O7CMumNfjBl-J22At8dJ53MEvRNrFxP7A7hcSIGuJkNGbbB75bUeA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_0" uigs="article_title_0" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXQd19aG-mE17YsgYf3Whg*mJdvp-lCCkCmEvR9za-8N1Gi2qYvids8f2-8r0cC8vxe9uw5PRHtqmS*NTwc6JrDZzRhe1WAjU*HVscXRAlvKVL2mYqfO-KvAx4OLFJgz-IM=">【<em><!--red_beg-->同仁堂<!--red_end--></em>健康新零售模式】<em><!--red_beg-->同仁堂<!--red_end--></em>步入新零售,你能抓住这个机会吗?</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9hd-s78VY-aLf68dNqBPygdBsGbasaTA2m22kLpcRPuGMmBA3m1sdF6tAOAwxNypCIwS0BnM8KxNAMmokBoXgsvAe82Retpx_rUwzxAcTVkIPl6LiD2NdtSQtNHU7zmxb7Siv7GmwkEB6mh-k-1F2QXsCO8zZaAnrHn9S3jS3q5qE8RsmObDbtQ..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_0" uigs="article_title_0">350年<em><!--red_beg-->同仁堂<!--red_end--></em>:最苦的一味药是砸了自己的品牌</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_0">携手<em><!--red_beg-->同仁堂<!--red_end--></em>,共创新辉煌背景:1. 1669年创立;349年历史;2. 国家级非物质文化遗产的品牌;3. 中国民族医药第一品牌;4. 直属于国...</p>
-<div class="s-p" t="1570796144">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_0" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_0">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1570796144'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_0"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_0"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_0">1669年,乐显扬创办<em><!--red_beg-->同仁堂<!--red_end--></em>药室;到2019年,<em><!--red_beg-->同仁堂<!--red_end--></em>已走过整整350年的历史.这家以中医中药闻名于世的企业或许从没想到过,自己...</p>
+<div class="s-p" t="1551135085">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_0" i="oIWsFt8V2jYUOr-Y7_MGD6VEKdho" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzd1b2onbJGTCK6QArSBMiE_L2dY0u9TyrvJIjn_odCuDriBY0uD2771XY_xegi8Gvg_p4jbDkNhOBGlzx29z7dHIQ4YNgVLOENxMUUtP04edWdjTBuqYcW24OZCnxixtX&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM4JNI9FT1pKKniakQqUWXLh0KyXfwze9X8fdyDPc5ic01hA/0" data-isV="1" uigs="article_account_0">中国知识产权报</a><span class="s2"><script>document.write(timeConvert('1551135085'))</script></span>
 </div>
 </div>
 </li>
@@ -257,20 +193,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_1" d="ab735a258a90e8e1-6bee54fcbd896b2a-f911e6931a733abf348d297cc6192790">
+		<li id="sogou_vr_11002601_box_1" d="ab735a258a90e8e1-6bee54fcbd896b2a-69605c7e3c263b2c0f76e52fef51a2fd">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_1" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8efbTMJpe5bhBnpq7CzcKhpdFCBySkPnCRtUOiemF-R1cQoxL6NYUopW81wvLrkYQxAB8T1s2vYDPcG9Devk-BVP9jeIc_WAn3DrUnQSLkAA-GbdNMgvfb-54z_tGSZTqA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_1"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUfCE78LdrEwzq3CwwJnydnQDSIVwF1NiajhInmoXAHicvKo10Lxqa7eQ8kkNaH7kMMOsAIVKzTZhBQA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_1" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9UZnA3N3ccs0_YV42MlRHAMCHnfAfxW5pysnT0VjhTt74mCAp604X2I7DOVjqJjoIV-4rHD2exX4FSdmLYBYE4AZtVMxLIMh4kNMmuiPtulZ1nJEYqudgaHxg9KK0bClPqOgj36oyWdiELVSWtgTi921WCiayROGBRqObGmIHxbrzAjcIGepUqA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_1"><i></i><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/YVoaeC1oGjyqqpanMClIL0xDcqNcV0VnvP9aRoJ5gVib7QgKHQT0nrqUydLa6Cia3lk2KHGMhm3G9bPpflRRxImg/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8efbTMJpe5bhBnpq7CzcKhpdFCBySkPnCRtUOiemF-R1cQoxL6NYUopW81wvLrkYQxAB8T1s2vYDPcG9Devk-BVP9jeIc_WAn3DrUnQSLkAA-GbdNMgvfb-54z_tGSZTqA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_1" uigs="article_title_1" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXR0OT2sTeh4kA9WqK2OtI*UPVTTdyjhbmqWIWPjgkCbZHlPBKuFhnw25Y5Yz-CfU0tDMWIWd3W06-ctvlOlJ4k629szaYNbyWWhC3bvMlkCFZVEY4F6DTW7lhWRblu98Q4=">【<em><!--red_beg-->同仁堂<!--red_end--></em>健康新零售模式】做<em><!--red_beg-->同仁堂<!--red_end--></em>新零售是什么后果!</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9UZnA3N3ccs0_YV42MlRHAMCHnfAfxW5pysnT0VjhTt74mCAp604X2I7DOVjqJjoIV-4rHD2exX4FSdmLYBYE4AZtVMxLIMh4kNMmuiPtulZ1nJEYqudgaHxg9KK0bClPqOgj36oyWdiELVSWtgTi921WCiayROGBRqObGmIHxbrzAjcIGepUqA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_1" uigs="article_title_1">太寒心!<em><!--red_beg-->同仁堂<!--red_end--></em>,丢脸丢大了!!</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_1">从事<em><!--red_beg-->同仁堂<!--red_end--></em>就是消费致富,把神话变为现实!如果你加入<em><!--red_beg-->同仁堂<!--red_end--></em>,使用<em><!--red_beg-->同仁堂<!--red_end--></em>公司的产品,再分享出去,你再买那些东西都给你打折,...</p>
-<div class="s-p" t="1570796144">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_1" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_1">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1570796144'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_1"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_1"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_1"><em><!--red_beg-->同仁堂<!--red_end--></em>内部管理混乱对下属企业监督管控不力<em><!--red_beg-->同仁堂<!--red_end--></em>因&ldquo;蜂蜜门&rdquo;事件被监管部门严厉处罚、并撤销中国质量奖奖称号、收回奖杯和证...</p>
+<div class="s-p" t="1551350017">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_1" i="oIWsFt77txLvAyskuhXBG0AKzipM" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzncdEEdvO9n-2f1n_kvHSRc6Y-0XMHM5R33mIVDofKjg4gzp5mH-mgYIJQL7gJfrg6_dchDxT0wyqUxgU0nWmoS65SW6Hc3Wn1l_c2FEnY9H0w8__i2fWAG4OZCnxixtX&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM69oAYHfRvCmLYqtmZt9AzL1yFkoPfwfFAcAtK5mw9uvQ/0" data-isV="1" uigs="article_account_1">秦皇岛新鲜事儿</a><span class="s2"><script>document.write(timeConvert('1551350017'))</script></span>
 </div>
 </div>
 </li>
@@ -278,20 +211,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_2" d="ab735a258a90e8e1-6bee54fcbd896b2a-a56d143dd206927af76739ff9375432f">
+		<li id="sogou_vr_11002601_box_2" d="ab735a258a90e8e1-6bee54fcbd896b2a-7b51c02d79fc21dbbfe6ccf44d12ae7d">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_2" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8d4ifSO3HX0pz2O7elaqTOmel0d6xixEbZgQykPjVozYDiBYOFwJe5e5ug1dDvJSV-VC0wG242DTPMVdczqskNUHqadRjOUDwEsjmq443dZMlDnxP-eT7MXdrgozfSg6bw..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_2"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUfuQaRIFPpm5y6oiaItl30tOcEsumj8MYyhRUAQgjCyxc5UUdDqBAQG3OhNnibmxNQoccHOxiaC7PeWA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_2" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9EV8UgJ5ETMVbyc8ikFNvZfsgh1e71MFzj9csHWbNhDZwzMdYhRv_lsVMKmqZ10wqXGXfHUzHtl-1y27C0nsrfeJZ09hlTbZV3W2VgRfyvz2j-cmBS597l58UjHet7_vlF6pg0XCZFpc6MxsXZAnmOnDzZd0KTWqzkJMsttvRys1QL0Hr9Gyd3Q..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_2"><i></i><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/tGqTFwsr3FA8fpcwSYcHOO8Q2dHDbWXaiazQEP7g3lSrLkTwoOTBDGungQ4BJv9yhx7OusDwqUDHSqUlgRSoWNA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8d4ifSO3HX0pz2O7elaqTOmel0d6xixEbZgQykPjVozYDiBYOFwJe5e5ug1dDvJSV-VC0wG242DTPMVdczqskNUHqadRjOUDwEsjmq443dZMlDnxP-eT7MXdrgozfSg6bw..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_2" uigs="article_title_2" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXRFW4xbZVJu7E0rcXnPm869CGwpbdHQ0N97X5u0b-2JSqpIUqBedb*tfebw*GWZWMqi69*JUnMuzD*TGMToR8f7hpaBXx0Qo9KIX3z4qdhKLd3Rfjp5yxZ1dsUS*3SzX-s=">【<em><!--red_beg-->同仁堂<!--red_end--></em>新零售板块产品】<em><!--red_beg-->同仁堂<!--red_end--></em>产品搭配与调理方案汇总!(值得收藏)</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9EV8UgJ5ETMVbyc8ikFNvZfsgh1e71MFzj9csHWbNhDZwzMdYhRv_lsVMKmqZ10wqXGXfHUzHtl-1y27C0nsrfeJZ09hlTbZV3W2VgRfyvz2j-cmBS597l58UjHet7_vlF6pg0XCZFpc6MxsXZAnmOnDzZd0KTWqzkJMsttvRys1QL0Hr9Gyd3Q..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_2" uigs="article_title_2"><em><!--red_beg-->同仁堂<!--red_end--></em>啊<em><!--red_beg-->同仁堂<!--red_end--></em>,让多少人寒了心</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_2">保健品不可代替药品.<em><!--red_beg-->同仁堂<!--red_end--></em>健康直销/<em><!--red_beg-->同仁堂<!--red_end--></em>健康新零售/<em><!--red_beg-->同仁堂<!--red_end--></em>健康新渠道分销/<em><!--red_beg-->同仁堂<!--red_end--></em>健康社交电商/<em><!--red_beg-->同仁堂<!--red_end--></em>健康直销产品/<em><!--red_beg-->同仁堂<!--red_end--></em>健康...</p>
-<div class="s-p" t="1570796144">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_2" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_2">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1570796144'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_2"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_2"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_2">芸菱有话说之前看到一句留言,十分贴合芸菱此刻的心情,&ldquo;<em><!--red_beg-->同仁堂<!--red_end--></em>啊<em><!--red_beg-->同仁堂<!--red_end--></em>,你早该吃药了.&rdquo;2月19日,国家市场监管总局发布通...</p>
+<div class="s-p" t="1550972276">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_2" i="oIWsFt_zgYYIf8itv5N4i-Iv5g6c" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzkT25nu-j216rqvnsTAfyFNpNqY4wgh6poMx8VJ5oRqN-8jBgOAcvy7UhfHbTNCCuaQbT381CwTYGTZInkOkcU_Sj6GAgGd9NdLWvQmi8hiQMPXtnzkZUXOO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5IUGchCkasS0spegn3O7wDE3TzzcYpOa048tRZ2gkbOw/0" data-isV="0" uigs="article_account_2">中医集结号</a><span class="s2"><script>document.write(timeConvert('1550972276'))</script></span>
 </div>
 </div>
 </li>
@@ -299,20 +229,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_3" d="ab735a258a90e8e1-6bee54fcbd896b2a-4807b984f6c2ac992ac53f4420cb4b55">
+		<li id="sogou_vr_11002601_box_3" d="ab735a258a90e8e1-6bee54fcbd896b2a-10dc69742ea38cf9c5937b69af23c9e0">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_3" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8Z2HVUhgApgKDpmofqR3VrSQNgvq_xF24qEna4eSRkrmObJUBUNNddEsRhS_C2UEkHexOyWheS5Vnzzv_ZVFa1_BbKKX2zrw6Gs3VdqK24RVzwXwjMOAdxvFcvUoAZZH7Q..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_3"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUfCE78LdrEwzq3CwwJnydnQj7NMUBKUM6GBNibGe1hJhxFxpIxbQgF8LapsX8fjVgostgeOAROfmxQ/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_3" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9VQvYOKJ32JXsIC9NQPhYf4np94mSSNJx-qBOhZDKLd4dDnr-U6l2430Ic6dSgCI8NXzVTUPdCD-tgeEzGX9EP1FWmwfZli-aiEE-XV--5Pst3HJaGMBbNF_2vxVKh5NJPHbKyQ6CqV3NbdLqhBy9E0kWpSWVqAVLdKzhrf0qvZ7zAjcIGepUqA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_3"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/duAMiaSchibTAATbNK2PGIrmaG7gxxGF3PQRqhtXebkGSWL5CxYpcOOksEoGctd47OfQZUpmaNJ0ZYSvFvHogsTQ/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8Z2HVUhgApgKDpmofqR3VrSQNgvq_xF24qEna4eSRkrmObJUBUNNddEsRhS_C2UEkHexOyWheS5Vnzzv_ZVFa1_BbKKX2zrw6Gs3VdqK24RVzwXwjMOAdxvFcvUoAZZH7Q..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_3" uigs="article_title_3" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXSBAGQBamSnzW9P*LH5SSfDH-PkYbx7a7Jb5se4-UjByS1rejYPJnPr9FGpAnk0El8sex7lhtB2fhBht*U59xLU93D5fvQ2rHkwN9l7IfzvLSTvCZ6S5xUfEND8hmWUlK0=">【<em><!--red_beg-->同仁堂<!--red_end--></em>健康新零售模式】<em><!--red_beg-->同仁堂<!--red_end--></em>新零售大健康产业项目招商加盟!</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9VQvYOKJ32JXsIC9NQPhYf4np94mSSNJx-qBOhZDKLd4dDnr-U6l2430Ic6dSgCI8NXzVTUPdCD-tgeEzGX9EP1FWmwfZli-aiEE-XV--5Pst3HJaGMBbNF_2vxVKh5NJPHbKyQ6CqV3NbdLqhBy9E0kWpSWVqAVLdKzhrf0qvZ7zAjcIGepUqA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_3" uigs="article_title_3"><em><!--red_beg-->同仁堂<!--red_end--></em>的来历,居然是这么一个感人的故事</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_3">这是一个为自己健康投资的项目,为家人、为自己、为父母、为儿女、来和我们一起加入<em><!--red_beg-->同仁堂<!--red_end--></em>大健康产业市场来创造财富跟时间自由...</p>
-<div class="s-p" t="1570796144">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_3" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_3">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1570796144'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_3"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_3"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_3">就叫<em><!--red_beg-->同仁堂<!--red_end--></em>吧,你看这个名字怎么样?&rdquo;赵桂堂见他当真,便笑着说:&ldquo;刚才我是一句玩笑话,你莫当真.再说,建大药堂需一大笔钱...</p>
+<div class="s-p" t="1567332283">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_3" i="oIWsFt4LtrnJrbpRTMyPBL55t5a4" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzcTi8owU5yF45fVBRWdJUxw3oW_Hp6MiZErnhx6WXLGHV59050IRxra1nPNxfo1i0HadOpfRaKPgHomF7aSfZuSTS_7n-DooqZCagsQTaKrkxfcAA3LkDkKUiiWOv1GPM&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5LX4Zk8PsiaiaG9ap1r0m25F0Au4rykGibaiadx3W0KZuKdw/0" data-isV="0" uigs="article_account_3">yu欢乐逗</a><span class="s2"><script>document.write(timeConvert('1567332283'))</script></span>
 </div>
 </div>
 </li>
@@ -320,20 +247,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_4" d="ab735a258a90e8e1-6bee54fcbd896b2a-2d29867b12109191cc23f78af56648f0">
+		<li id="sogou_vr_11002601_box_4" d="ab735a258a90e8e1-6bee54fcbd896b2a-30806e7863d82f5712f00c16cb0e75a5">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_4" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8d8QmNDjuLNZsKPxwIJrUeTMwKi2rl50q5s19_ge9zQ6BlNImznG4juV61PazsnQp--NYPuQTcSLhoTWWXAp1Kpe9nyHGkG8IZ_mvda7K6DK2R8ZbE2gkhaq3X8EKMKOIA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_4"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUdqdvKibe7dY72uQbtV5yxcuWcKGZica06nI8ue5beYRDyQicM2lGpFbuG6b1bj3WLY1e36HYp3CYicgg/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_4" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9nFgncT0CNE2rFW9DImvvjvLIVl1tSNIShd5bMYekDMvntceBM324OZ4bIxByak0OAaYizdJYfBmlfU9zKwgJHIs_EbUz_rGJ2zetGtcWZ9ol4Vbab8OzZ5UIaKoeNH9UVzFBs3jjymeeWTrBIYvmUnXj0Zscqy6U4T9EGKigUnvm0CtGSSkZQQ..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_4"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/h42ViaVPV7pOFDKW0y1o1YiasKDKqwqDeGadvCvc90lGibfWNmj6xaxUAuPLRlshy8z8NTOSPH0t5o2qfMxeQicPfQ/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8d8QmNDjuLNZsKPxwIJrUeTMwKi2rl50q5s19_ge9zQ6BlNImznG4juV61PazsnQp--NYPuQTcSLhoTWWXAp1Kpe9nyHGkG8IZ_mvda7K6DK2R8ZbE2gkhaq3X8EKMKOIA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_4" uigs="article_title_4" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXQwFLN9-Xk-EPMnesaxWY6DMCw8f69HV*gb7jF4uo8qs7u*5TvqM8nVV2MbsC5Qh*4QMsJ8-0khp8LR*isLipnV50Pgsaikt59bEbzmuVwKclCetgX-oTWButbEy-KBNqg=">【<em><!--red_beg-->同仁堂<!--red_end--></em>直销】世界直销看中国,中国直销看<em><!--red_beg-->同仁堂<!--red_end--></em>,没错就是那个百年老字号<em><!--red_beg-->同仁堂<!--red_end--></em>进军直销了</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9nFgncT0CNE2rFW9DImvvjvLIVl1tSNIShd5bMYekDMvntceBM324OZ4bIxByak0OAaYizdJYfBmlfU9zKwgJHIs_EbUz_rGJ2zetGtcWZ9ol4Vbab8OzZ5UIaKoeNH9UVzFBs3jjymeeWTrBIYvmUnXj0Zscqy6U4T9EGKigUnvm0CtGSSkZQQ..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_4" uigs="article_title_4"><em><!--red_beg-->同仁堂<!--red_end--></em>集团丨<em><!--red_beg-->同仁堂<!--red_end--></em>国药 经典传承中成药品牌</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_4"><em><!--red_beg-->同仁堂<!--red_end--></em>直销项目介绍:什么叫做趋势?如果大多数人多知道了,比如说淘宝电商,那就不叫做趋势!巴菲特说过一句话,如果一件事情...</p>
-<div class="s-p" t="1566632433">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_4" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_4">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1566632433'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_4"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_4"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_4">在日前举办的2019中国中药品牌建设大会上,<em><!--red_beg-->同仁堂<!--red_end--></em>集团安宫牛黄丸和六味地黄丸荣获2019年度经典传承中成药品牌.安宫牛黄丸由...</p>
+<div class="s-p" t="1575263728">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_4" i="oIWsFt8YAnOexHU9BJCV5rFEobzk" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzQwoBwCOyQs0hp1gsPjnmZ_UG3C2ZLN9yD1J6GEo0PIPoqtcLWUx32FGd3eDkZ2X0wBp399Fw_5anSYHn9ZEUl21swhqeMOZJDA-_2dUo7GJUh2imPqXokm4OZCnxixtX&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM6LliaC2a5BHT2sqtfbM4Sk2vNJQ299KcGk6UXlfsKbfkg/0" data-isV="1" uigs="article_account_4">国资京京</a><span class="s2"><script>document.write(timeConvert('1575263728'))</script></span>
 </div>
 </div>
 </li>
@@ -341,20 +265,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_5" d="ab735a258a90e8e1-6bee54fcbd896b2a-24b5ad46c3a40c64c57ba1ca927461fc">
+		<li id="sogou_vr_11002601_box_5" d="ab735a258a90e8e1-6bee54fcbd896b2a-a49481842b07ecabdb2979f5555d76bd">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_5" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8b-lIubbAvrCrBJApk2zHCS6RX2ZMX_VIpOvfP1gOrb7_PQvKy6AmwwVLT22WRXWXagkvn1SiMiei-Lclt9eoTjXpwFnVDxs3k-7rn3qXOziW0HKRc4rr7rI3OTRHYU2og..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_5"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUc89IdpuK2RQY25JrGjwUSI5e7G0L0kRZ9UBevGD22OOPcZialFo2h28EIibSgoR1fzbClJTmU5E2Zg/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_5" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9kyQv4wECHNM8WePx0GYTGJI3HRu85shLrfNhtQLp5W0w8X-6nU3lSAFkO6Hlg1RyL3sRlPTK-XWobTNSzxRzk0iHQfgZiMnofmdOFcRUUebmpo8biZAL6BazOO3SDbav8d9a3ddIJwEY2LmIEth4sp6DdAI-Rd4kCmswUbjZQhSrCDCayYmfpA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_5"><i></i><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kXfL2HA1j22gpRKdFMoOw2OU4703wOibvl6H1S5R3GBlpAeoJE3Mdjav1TwURp8EAbfBib2ZibVfMF3cU60Sv20xw/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8b-lIubbAvrCrBJApk2zHCS6RX2ZMX_VIpOvfP1gOrb7_PQvKy6AmwwVLT22WRXWXagkvn1SiMiei-Lclt9eoTjXpwFnVDxs3k-7rn3qXOziW0HKRc4rr7rI3OTRHYU2og..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_5" uigs="article_title_5" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXSsWD9n0XO1224LPPEzg*JSDFmdS64GH*qwXpDRaGhpMgWecZ1hntCo2fh49IRl-Sl-8JIiJrUlaC*AJtZR-BFaabE5G945cy86MgGdFATrA80V4gNSa8TyEFGK5*2Q5Po=">【<em><!--red_beg-->同仁堂<!--red_end--></em>健康新零售模式】<em><!--red_beg-->同仁堂<!--red_end--></em>健康新分销:<em><!--red_beg-->同仁堂<!--red_end--></em>的招牌为何响亮?答案就在这句古训里</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9kyQv4wECHNM8WePx0GYTGJI3HRu85shLrfNhtQLp5W0w8X-6nU3lSAFkO6Hlg1RyL3sRlPTK-XWobTNSzxRzk0iHQfgZiMnofmdOFcRUUebmpo8biZAL6BazOO3SDbav8d9a3ddIJwEY2LmIEth4sp6DdAI-Rd4kCmswUbjZQhSrCDCayYmfpA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_5" uigs="article_title_5"><em><!--red_beg-->北京同仁堂<!--red_end--></em>,正式入驻金博大!</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_5">品牌故事 &mdash;&mdash;古训的启示 &ldquo;炮制虽繁必不敢省人工, 品味虽贵必不敢减物力&rdquo; 这句历代<em><!--red_beg-->同仁堂<!--red_end--></em>人恪守的古训 是这家企业成长的砺金石...</p>
-<div class="s-p" t="1570627326">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_5" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_5">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1570627326'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_5"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_5"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_5">永城第一家<em><!--red_beg-->北京同仁堂<!--red_end--></em>正式入驻金博大<em><!--red_beg-->同仁堂<!--red_end--></em>健康的故事就是中华医药养生文明的进化史楔子&mdash;&mdash;前世很久很久以前,在那浩渺无垠的...</p>
+<div class="s-p" t="1575972107">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_5" i="oIWsFt07PTFTNviJNrqRsfEYgquc" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzQgMg8soZfSyIdryVsm-wUGDw_pkUbq2vEbRYvDJogCtvq8xyFEwBsUGekhdC35drE3VkhkNvbVA3hHiw3rpn7ojkxGJck2ufRFKbvRo9vym55M7fHwN9daUiiWOv1GPM&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM4KWbE1pcsL3Picce8uqd8S3a5oXkr5hmwZAMhtrgOByiaQ/0" data-isV="1" uigs="article_account_5">金博大广场</a><span class="s2"><script>document.write(timeConvert('1575972107'))</script></span>
 </div>
 </div>
 </li>
@@ -362,20 +283,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_6" d="ab735a258a90e8e1-6bee54fcbd896b2a-5328d3a466e775ab70a1fb93d5f3f11b">
+		<li id="sogou_vr_11002601_box_6" d="ab735a258a90e8e1-6bee54fcbd896b2a-e31d34212e08ad174b6e2565752e4bf8">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_6" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8bE310UNpmL0VTX7PtFhMdBAoSEmvZRlLG2be1I3-0kWsJDAe-M3aK-gh3m_8He_yRq4UPuj7XITJq8GUF-7gj6RclbfbMKrGS2yRo5KfEliUxtA3kupVGTyPfCoem7FzA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_6"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUfTs9npd5tfUAUgSOspHrgkK2nXB9CuoVJVrgWZr3t7qzY2n9ofNeLvKc4IlmH6LicgO5gh8l5Z5xw/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_6" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9yBgri5jSH6ggJfsf6kVf2MNBAKbMPUVF6uImgNZVLKFQjcHu83tp--pbqWSjeOZG0Ey0izyUf67c5m70juroGlgPQ6WKcOIGjoF8elYs7pfsRsBtn731NWtDASH8u6RFUlQZtjh6eNw_8h_x0r0XQ1BNj7clsDGiZ0qSQvxh9NVflztgI7RZ1g..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_6"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/wZ8jfcVwf7LjR3l8AGlCq1GraZbEH3tUzB592aenHJV3Ifo1BiaJQ6F6ibKyhQibGic4VwFRrkib6pHTlh7IdrfzoXw/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8bE310UNpmL0VTX7PtFhMdBAoSEmvZRlLG2be1I3-0kWsJDAe-M3aK-gh3m_8He_yRq4UPuj7XITJq8GUF-7gj6RclbfbMKrGS2yRo5KfEliUxtA3kupVGTyPfCoem7FzA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_6" uigs="article_title_6" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXRwJPFXzaF2z7k5lcXnnCEQQ-YVkA5PUGN5lQkJYh1Ej6Zr*lETsi*R83WI*RILLeGPkvCLKkpdDey9Z2jozUCrP1qEYTpHnMGn4Hu95wLzbCGJTSrt5RxOZ16lmck4Drw=">【<em><!--red_beg-->同仁堂<!--red_end--></em>新零售板块】<em><!--red_beg-->同仁堂<!--red_end--></em>健康新零售最详细介绍,<em><!--red_beg-->同仁堂<!--red_end--></em>招商加盟!</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9yBgri5jSH6ggJfsf6kVf2MNBAKbMPUVF6uImgNZVLKFQjcHu83tp--pbqWSjeOZG0Ey0izyUf67c5m70juroGlgPQ6WKcOIGjoF8elYs7pfsRsBtn731NWtDASH8u6RFUlQZtjh6eNw_8h_x0r0XQ1BNj7clsDGiZ0qSQvxh9NVflztgI7RZ1g..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_6" uigs="article_title_6"><em><!--red_beg-->同仁堂<!--red_end--></em>被罚1409万!北京纪委:造成国资严重损失</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_6">人生一世,小赢靠聪明,大赢凭智慧,人生机会有很多,而机遇只有几次,历史性机遇更是难得,<em><!--red_beg-->同仁堂<!--red_end--></em>进军新零售领域就是历史商机...</p>
-<div class="s-p" t="1567683735">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_6" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_6">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1567683735'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_6"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_6"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_6"><em><!--red_beg-->同仁堂<!--red_end--></em>蜂业部分经营管理人员在盐城金蜂进行生产时,存在用回收蜂蜜作为原料生产蜂蜜、标注虚假生产日期的行为,对此处以罚款近...</p>
+<div class="s-p" t="1550030519">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_6" i="oIWsFt5Yhra8zgdB1SJrhZMxGhwk" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzzKe3NzKxrBhBkU0fAL4Yy521eyNy279meWyPjMEkVq2PHn-hSXPJfQIGesq57_kgeaoY5VCq-KU3vq-E2F2zgP4DrjmXgdHDSDa0fhrPeaO5pBiVUAWR3KUiiWOv1GPM&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7PQx41GmZhAe2epnOibZQRMicYkIdjJFqxC4BDU2xIyhIg/0" data-isV="1" uigs="article_account_6">观察者网</a><span class="s2"><script>document.write(timeConvert('1550030519'))</script></span>
 </div>
 </div>
 </li>
@@ -383,20 +301,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_7" d="ab735a258a90e8e1-6bee54fcbd896b2a-ae500e66dec7f57cb2143e114d462f64">
+		<li id="sogou_vr_11002601_box_7" d="ab735a258a90e8e1-6bee54fcbd896b2a-dccb6f5b346f28f68ac542095ba59b8f">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_7" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8bblEBYLWgZfo_fEi7jv-mkqaRXd9WoNT7LBFNyVj8Es08mFRb1ALB0I7_bRMhmbmfwm2tZtcpk9Texnopl6JDAE3qmD1TvP2s39yoKRFQnRWL1lwpjKwAMCYioxHkzTmA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_7"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUcV8ohEqWiarj5aZftx7YCPBlH1NCmPSdJSzTg7XtMUpMn4XBP6sqhzuliafWrLMoYvoiaUgoCFHBxhA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_7" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd98ZC7H5ZHnyCIBY7Q_KN9AfWBKt9iaxL_Co9lPIFHKxXdgMyTGA0R94elp26CnpE1WKw-XGTAxuXq1gJxXAL_g5fwnj3XSUuDXNnzwCZxqoSWgTI6WsU0Nwkrgh2JSnbBc-G2GtESXBoNCBpNBspd2_VxB2CvRtit19l8q41vLD_wdVqCwyPdzA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_7"><i></i><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/3jgZo9nibHwqCcqbqbzYbeibiaRa4NW1G6m4SOKkPM1qwG83MkExIiarDvookxHE12DbIPufLIojm2sUzZiceRSeFeA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8bblEBYLWgZfo_fEi7jv-mkqaRXd9WoNT7LBFNyVj8Es08mFRb1ALB0I7_bRMhmbmfwm2tZtcpk9Texnopl6JDAE3qmD1TvP2s39yoKRFQnRWL1lwpjKwAMCYioxHkzTmA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_7" uigs="article_title_7" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXR0Znyt0wo7fCdv6ZUTQBQicze7Rk*X6pFPQSAimXfloLTkuCIrblKUqoLH3McK*fxki7W5xjTMbx-GFFv1W6lIeICS9JeOWdi9naR7M3MdeMt1rcjLjoHRu35T5zRdt3w=">【<em><!--red_beg-->同仁堂<!--red_end--></em>直销】做直销,为什么要首选<em><!--red_beg-->同仁堂<!--red_end--></em>直销!</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd98ZC7H5ZHnyCIBY7Q_KN9AfWBKt9iaxL_Co9lPIFHKxXdgMyTGA0R94elp26CnpE1WKw-XGTAxuXq1gJxXAL_g5fwnj3XSUuDXNnzwCZxqoSWgTI6WsU0Nwkrgh2JSnbBc-G2GtESXBoNCBpNBspd2_VxB2CvRtit19l8q41vLD_wdVqCwyPdzA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_7" uigs="article_title_7"><em><!--red_beg-->同仁堂<!--red_end--></em>,你要善良!</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_7">其实从模式和制度上面都非常的相似,但是,为什么想到做直销,我们很多朋友却选择了<em><!--red_beg-->同仁堂<!--red_end--></em>呢?选择不对,努力白费!成功的最高...</p>
-<div class="s-p" t="1565610310">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_7" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_7">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1565610310'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_7"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_7"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_7">&ldquo;炮制虽繁必不敢省人工,品味虽贵必不敢减物力&rdquo;,<em><!--red_beg-->同仁堂<!--red_end--></em>300年的清誉,会不会毁在这代人的身上.如果不是人民日报官微亲自报...</p>
+<div class="s-p" t="1544934161">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_7" i="oIWsFt-7efyp6XdhDcov-x1FI5as" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzKesHdaMrVxzT-dJeUZJxJU53TFRJ7Yv7i3v1zXxTIaJaTYoRUgLDYWxpy-7uWDzhZD_fgSqEx-DHv_OEfyuKR6mgzHaFA8Ds99SgJFsd9yroOVM97LKvx-O00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM6ZAUTic1Bx0ke7pGrL7fKMkQDlaSDavibHGs2hl6z5A3Hg/0" data-isV="0" uigs="article_account_7">快速消费品精英俱乐部</a><span class="s2"><script>document.write(timeConvert('1544934161'))</script></span>
 </div>
 </div>
 </li>
@@ -404,20 +319,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_8" d="ab735a258a90e8e1-6bee54fcbd896b2a-f7dd5d9ca04c9b27b7af8a03ac83be4d">
+		<li id="sogou_vr_11002601_box_8" d="ab735a258a90e8e1-6bee54fcbd896b2a-618c283d2651e868baa8a4dba2c4919f">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_8" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8TXHVT0aTnrjzRNU9qTCUZGkW94kgBSuvqkXKQLAxpTYxn-W4NxM2-lgcUB9fWGP3t2N35OkLyyVTojh0i8d4INMCxXs4Vm6WD4nGw4T12pY_LvbEMxo59ICn9lOoZLP2Q..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_8"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUdiciaqhFib8TrasYfBl9BTVkFsS3YjyhD96TAnjnXAbvVYT5EFRQDhaXhVia8ofg3oEOMuE45lW0UoTA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_8" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9-XTHFCjEwuWYUHq8_XglRaZigPLN0_1NkuBUrCVe70gVJjGdnF8NsiaZAvhbUHVPgSqcMLgxR5w6TSjGtBTXugx1oe4WFPZ9IWBSG4z86xJ1S3VfFNsc-jA_lU4uSYDVXJbSuFjZ_Y9idKT1KZhL63KfLTN4KOPyR7xvsKLMDDsCYioxHkzTmA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_8"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/n9re8H17YquApQOLI1zUKvbOzByGicXG4hxDPIXgr0w0rEiaCt84m9kvuiahSp0mWQGLAMeBShvRPxibAlh5y8kn3Q/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8TXHVT0aTnrjzRNU9qTCUZGkW94kgBSuvqkXKQLAxpTYxn-W4NxM2-lgcUB9fWGP3t2N35OkLyyVTojh0i8d4INMCxXs4Vm6WD4nGw4T12pY_LvbEMxo59ICn9lOoZLP2Q..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_8" uigs="article_title_8" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXSdKvJDw-Q-N7ZF5b3thpVP4UhHiWXvP0wJsVAf6zCUDizGU5EsW-2HTZ5tkg5BY*V*lBGWJZfJlWWEdm-knCjrgGMGR0LKcoZ4kdkdSsLc-w*Zwqu-330TlFnm8ez2ntA=">【<em><!--red_beg-->同仁堂<!--red_end--></em>新零售模式】<em><!--red_beg-->同仁堂<!--red_end--></em>新零售板块最新产品介绍---总统牌西洋参乳清蛋白粉(重磅消息)</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd9-XTHFCjEwuWYUHq8_XglRaZigPLN0_1NkuBUrCVe70gVJjGdnF8NsiaZAvhbUHVPgSqcMLgxR5w6TSjGtBTXugx1oe4WFPZ9IWBSG4z86xJ1S3VfFNsc-jA_lU4uSYDVXJbSuFjZ_Y9idKT1KZhL63KfLTN4KOPyR7xvsKLMDDsCYioxHkzTmA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_8" uigs="article_title_8">20万亿的大健康,<em><!--red_beg-->同仁堂<!--red_end--></em>的&ldquo;知嘛健康&rdquo;打算用几步把它吃掉?</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_8">总统牌西洋参乳清蛋白粉总统牌西洋参乳清蛋白粉 保健功能:增强免疫力 主要成分:乳清蛋白、西洋参提取物<em><!--red_beg-->同仁堂<!--red_end--></em>健康直销/<em><!--red_beg-->同仁堂<!--red_end--></em>...</p>
-<div class="s-p" t="1570712548">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_8" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_8">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1570712548'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_8"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_8"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_8">今年1月,<em><!--red_beg-->同仁堂<!--red_end--></em>健康推出全新的&ldquo;知嘛健康&rdquo;,同一时间开启知嘛健康APP的研发,在大健康领域进行全新商业布局,该消息一经出...</p>
+<div class="s-p" t="1556286601">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_8" i="oIWsFt1NQ57DmW7x9oWIDSDwCr1E" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzl9kJG0JP2oJ0opCSK35PG3PdQfz8_7dOOnSxRMt7CyuMsgXMTrEm5zZdiaXxUW3q66Wwvnd-pmMc9_X0xFUE3KqJd-m6Lv0dNpFg8CJWb72_hbPoJSQpf24OZCnxixtX&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM63LUiaFoTd9NRrUzWQHkyLCnia3vkg18lWvebo4lnZ5wBg/0" data-isV="0" uigs="article_account_8">天浩观察</a><span class="s2"><script>document.write(timeConvert('1556286601'))</script></span>
 </div>
 </div>
 </li>
@@ -425,20 +337,17 @@
 		<!-- z -->
 	
 		<!-- a -->
-		<li id="sogou_vr_11002601_box_9" d="ab735a258a90e8e1-6bee54fcbd896b2a-b1fa4ae5226e617d5d0e1bbc2e4159b2">
+		<li id="sogou_vr_11002601_box_9" d="ab735a258a90e8e1-6bee54fcbd896b2a-22d078672ed537e97f0178c771a01e06">
 <div class="img-box">
-<a data-z="art" target="_blank" id="sogou_vr_11002601_img_9" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8S4831O_9EYjrdxkOaUAE6tmwaXDO4VUYJszDBHyYGt_3_tCRkRyilYicMq3t3n-Ye-U2_CD8C2vvBap0ZlCQ0tHos2Du_r66y3_H40hBotfvGQpyAlrXddhWLv6O878UA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_9"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kkHxVIib7jUdiciaqhFib8TrasYfBl9BTVkFaic4C1Ba21Fok4vjumITstACeoiaNmCoB22vDQ3LfibklOsMibMlKlYqqA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
+<a data-z="art" target="_blank" id="sogou_vr_11002601_img_9" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd90QLa-eEtlxPO7Akknl_91NdaPTAJ1asmhQirxYwcShayRQmMS0_4nAiX64XEiNAxsCZTCgS95_C9GaVZqyBSJb5UFGpJkP9E_otDC__wLESbWl44leW83lW2UsQqBjbuphjLWaAXTc9km-YTd8PZb1zsLxxm88-7BtBy8TPlUcwNGbbB75bUeA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" uigs="article_image_9"><img src="//img01.sogoucdn.com/net/a/04/link?appid=100520033&amp;url=http://mmbiz.qpic.cn/mmbiz_jpg/kDOlmY8GAB73oiayXntBVpJo79H8CI9rP5DKleYrfH0STlrVZ6vmCUcG0GK3TCuDZmicDNEU74nRvQgvLFahAAgA/0?wx_fmt=jpeg" onload="resizeImage(this,140,105)" onerror="errorImage(this)"></a>
 </div>
 <div class="txt-box">
 <h3>
-<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5T5g46RgraqfC9ck-sIJL-GdASuegW1uVqXa8Fplpd9M0FqrxjY5EsKQuaUNYbdnbymlGSDvuhHLZvS223tF5bG0LAXsIVT8S4831O_9EYjrdxkOaUAE6tmwaXDO4VUYJszDBHyYGt_3_tCRkRyilYicMq3t3n-Ye-U2_CD8C2vvBap0ZlCQ0tHos2Du_r66y3_H40hBotfvGQpyAlrXddhWLv6O878UA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_9" uigs="article_title_9" data-share="http://weixin.sogou.com/api/share?timestamp=1570976314&amp;signature=qIbwY*nI6KU9tBso4VCd8lYSesxOYgLcHX5tlbqlMR8N6flDHs4LLcFgRw7FjTAOIMKxu8rDts6cI7z6SxrYsKvsXrd5vN58N*pCm2JnUXSKfTXIaGW1eFtjgCghr494vX-Sh7X63UhV0kE7I4FoB2P1iVibguEDsRjdEJy4Of8qwr02TyUYLoAc8B2bOzYfo646Uszxg5yfkVj8krlF8dlkifXaakTAQTyijB52-KQ=">【<em><!--red_beg-->同仁堂<!--red_end--></em>新零售模式板块】<em><!--red_beg-->同仁堂<!--red_end--></em>牌<em><!--red_beg-->同仁堂<!--red_end--></em>酒开始预售啦!</a>
+<a target="_blank" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7cQYPkD-L2HT8QMQHm5OzXFtFd-6kswoVqXa8Fplpd90QLa-eEtlxPO7Akknl_91NdaPTAJ1asmhQirxYwcShayRQmMS0_4nAiX64XEiNAxsCZTCgS95_C9GaVZqyBSJb5UFGpJkP9E_otDC__wLESbWl44leW83lW2UsQqBjbuphjLWaAXTc9km-YTd8PZb1zsLxxm88-7BtBy8TPlUcwNGbbB75bUeA..&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" id="sogou_vr_11002601_title_9" uigs="article_title_9">【<em><!--red_beg-->同仁堂<!--red_end--></em>】350周年庆  御鉴珍品  钜惠来袭</a>
 </h3>
-<p class="txt-info" id="sogou_vr_11002601_summary_9">此次上市的新品以及本草萃饮机系列产品传承350年的<em><!--red_beg-->同仁堂<!--red_end--></em>品牌与您一起书写灿烂未来18月27日起,<em><!--red_beg-->同仁堂<!--red_end--></em>牌<em><!--red_beg-->同仁堂<!--red_end--></em>酒开始预售啦!...</p>
-<div class="s-p" t="1567520017">
-<a class="account" target="_blank" id="sogou_vr_11002601_account_9" i="oIWsFt1H5Ot6OxmZjBWhC7UQq9M0" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqK_8O0EYo6VbPlVAEBqr-ggwvDqyjOWdz23JnhbYDnFTfFK2B3eYubxCYchsvLRJKLK-PEvsrtZnJ0A4CgCyyQq0-mMFb2mDy6esZHcpSF3eUh-Q7zKRU4LBSIZjpFD-aJuZfk1F7u4IiLeI54aBY6OO00efWrWmm&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM7FAOgSTPfrmvpZTAeS2ommgBpJcckXVXZrcBI9XwWOxQ/0" data-isV="0" uigs="article_account_9">为自己健康代言</a><span class="s2"><script>document.write(timeConvert('1567520017'))</script></span>
-<div class="moe-box">
-<span style="display:none;" class="sc"><a data-except="1" class="sc-a" href="javascript:void(0)" uigs="share_9"></a></span><span style="display:none;" class="fx"><a data-except="1" class="fx-a" href="javascript:void(0)" uigs="like_9"></a></span>
-</div>
+<p class="txt-info" id="sogou_vr_11002601_summary_9">时光流逝,从不停歇万物更新,我们成长不知不觉间<em><!--red_beg-->同仁堂<!--red_end--></em>已经走过350个年头一路同行,感恩有你350年的时间因为有你的陪伴让我...</p>
+<div class="s-p" t="1567591060">
+<a class="account" target="_blank" id="sogou_vr_11002601_account_9" i="oIWsFtxPM8OsZ5LiHDx-kb2S_YDs" href="/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6EzDJysI4ql5MPrOUp16838dGRMI7NnPqrzYbFRfWw1ZRA423AimXCQwvDqyjOWdzoGcFw_DwMTESpeGH5JTC8vW3dE-5ljkeNjSBVKfQs2hO-6s8uFpRgcgz0T1gP7tV9GroQpTjxrUBJcmHbzQYQOm-JRezeaeme388Hmoxqa99BZEb-DxuC24OZCnxixtX&amp;type=2&amp;query=%E5%90%8C%E4%BB%81%E5%A0%82" data-headimage="http://wx.qlogo.cn/mmhead/Q3auHgzwzM4Y4tVOYY2P5E0XD5S6YU60wPS11WxXA9ogqCeUr8K2MA/0" data-isV="1" uigs="article_account_9">承德双百购物广场</a><span class="s2"><script>document.write(timeConvert('1567591060'))</script></span>
 </div>
 </div>
 </li>
@@ -448,10 +357,10 @@
 </ul>
     
 <div class="p-fy" id="pagebar_container">
-	<span>1</span><a id="sogou_page_2" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=2&ie=utf8" uigs="page_2">2</a><a id="sogou_page_3" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=3&ie=utf8" uigs="page_3">3</a><a id="sogou_page_4" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=4&ie=utf8" uigs="page_4">4</a><a id="sogou_page_5" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=5&ie=utf8" uigs="page_5">5</a><a id="sogou_page_6" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=6&ie=utf8" uigs="page_6">6</a><a id="sogou_page_7" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=7&ie=utf8" uigs="page_7">7</a><a id="sogou_page_8" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=8&ie=utf8" uigs="page_8">8</a><a id="sogou_page_9" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=9&ie=utf8" uigs="page_9">9</a><a id="sogou_page_10" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=10&ie=utf8" uigs="page_10">10</a>
-			<a id="sogou_next" href="?usip=%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%81%A5%E5%BA%B7%E4%BB%A3%E8%A8%80&query=%E5%90%8C%E4%BB%81%E5%A0%82&ft=&tsn=0&et=&s_from=hotnews&interation=&type=2&wxid=oIWsFt1H5Ot6OxmZjBWhC7UQq9M0&page=2&ie=utf8" class="np" uigs="page_next">下一页</a>
+	<span>1</span><a id="sogou_page_2" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=2&ie=utf8&w=01019900&dr=1" uigs="page_2">2</a><a id="sogou_page_3" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=3&ie=utf8&w=01019900&dr=1" uigs="page_3">3</a><a id="sogou_page_4" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=4&ie=utf8&w=01019900&dr=1" uigs="page_4">4</a><a id="sogou_page_5" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=5&ie=utf8&w=01019900&dr=1" uigs="page_5">5</a><a id="sogou_page_6" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=6&ie=utf8&w=01019900&dr=1" uigs="page_6">6</a><a id="sogou_page_7" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=7&ie=utf8&w=01019900&dr=1" uigs="page_7">7</a><a id="sogou_page_8" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=8&ie=utf8&w=01019900&dr=1" uigs="page_8">8</a><a id="sogou_page_9" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=9&ie=utf8&w=01019900&dr=1" uigs="page_9">9</a><a id="sogou_page_10" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=10&ie=utf8&w=01019900&dr=1" uigs="page_10">10</a>
+			<a id="sogou_next" href="?query=%E5%90%8C%E4%BB%81%E5%A0%82&_sug_type_=&sut=3284&lkt=1%2C1577337391643%2C1577337391643&s_from=input&_sug_=y&type=2&sst0=1577337391745&page=2&ie=utf8&w=01019900&dr=1" class="np" uigs="page_next">下一页</a>
 		
-		<div class="mun">找到约284条结果<!--resultbarnum:284--></div>
+		<div class="mun">找到约23,782条结果<!--resultbarnum:23,782--></div>
 </div>
     
 </div>
@@ -553,5 +462,5 @@
 
 </body>
 </html>
-<!--1570976314389-->
+<!--1577349364603-->
 <!--zly--><!--weixin-->
