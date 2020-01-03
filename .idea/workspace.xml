@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d75b3f-dca4-4f85-ac1e-63125af26de5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GetWeChatUrl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pageurlList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxiess.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/微信爬虫-version2_.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/微信爬虫-version2_.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataStorage.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataStorage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SnuidGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SnuidGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IpProxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/IpProxy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeiXinSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeiXinSpider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/key:同仁堂word:为自己健康代言.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/key:同仁堂word:为自己健康代言.txt" beforeDir="false" afterPath="$PROJECT_DIR$/back.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxies.json" beforeDir="false" afterPath="$PROJECT_DIR$/proxies.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/同仁堂.html" beforeDir="false" afterPath="$PROJECT_DIR$/同仁堂.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +58,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -126,6 +126,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="微信爬虫-version2_" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GetWeChatUrl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="微信爬虫-version2_" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,6 +173,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.Test" />
         <item itemvalue="Python.SnuidGenerator" />
         <item itemvalue="Python.DataStorage" />
       </list>
@@ -180,6 +203,7 @@
       <workItem from="1577336577790" duration="7431000" />
       <workItem from="1577346876938" duration="2589000" />
       <workItem from="1577349621099" duration="619000" />
+      <workItem from="1578029729917" duration="13007000" />
     </task>
     <task id="LOCAL-00001" summary="增加防反爬机制">
       <created>1570763048098</created>
@@ -231,6 +255,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GetWeChatUrl.py</url>
+          <line>133</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GetWeChatUrl.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WeiXinSpider.py</url>
+          <line>224</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -241,12 +282,13 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CourseDesign$Test.coverage" NAME="Test Coverage Results" MODIFIED="1578041777803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WechatSpider$SnuidGenerator.coverage" NAME="SnuidGenerator Coverage Results" MODIFIED="1570952650028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WechatSpider$main.coverage" NAME="main Coverage Results" MODIFIED="1570976312939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/_version2_$SnuidGenerator.coverage" NAME="SnuidGenerator Coverage Results" MODIFIED="1570865253205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WechatSpider$DataStorage.coverage" NAME="DataStorage Coverage Results" MODIFIED="1570950892283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CourseDesign$main.coverage" NAME="main Coverage Results" MODIFIED="1577349354468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CourseDesign$main.coverage" NAME="main Coverage Results" MODIFIED="1578043622898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/_version2_$main.coverage" NAME="main Coverage Results" MODIFIED="1570866307450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CourseDesign$SnuidGenerator.coverage" NAME="SnuidGenerator Coverage Results" MODIFIED="1577344951227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CourseDesign$SnuidGenerator.coverage" NAME="SnuidGenerator Coverage Results" MODIFIED="1578038724894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -6,9 +6,13 @@ import requests
 import random
 from bs4 import BeautifulSoup
 import json
+
 from urllib import parse
 import SnuidGenerator
-
+from GetWeChatUrl import  get_real_url
+from GetWeChatUrl import getSingleProxy
+from GetWeChatUrl import get_snuid
+from GetWeChatUrl import getValidProxy
 """
 全局变量区域
 """
@@ -68,14 +72,24 @@ def get_Referer():
     referer= 'https://weixin.sogou.com/weixin?type=2&query=%E5%90%8C%E4%BB%81%E5%A0%82&ie=utf8&s_from=input&_sug_=n&_sug_type_=1&w=01015002&oq=&ri=0&sourceid=sugg&sut=0&sst0=1570865981022&lkt=0%2C0%2C0&p=40040108'
     return referer
 
+user_agents = [
+    "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; …) Gecko/20100101 Firefox/61.0",
+    "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36",
+    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)",
+    "Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10.5; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15"
+]
+
 # 用于获取网页的基本内容
 def get_content(url):
     try:
-        # url = 'http://www.xicidaili.com/nn/'
         headers = {
-            #"User-Agent": random.choice(user_agent_list)
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
-            "Referer" : get_Referer()
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/77.0.3865.90 Safari/537.36",
+            "Referer": get_Referer()
         }
 
         cookies = {
@@ -89,15 +103,12 @@ def get_content(url):
             "ABTEST":"5|1570673115|v1",
             #防反爬重点，每个SNUID达到使用次数限制后，需更新才能继续访问，不然跳转到验证码页面
             "SNUID": SnuidGenerator.getSnuid(),
+            #"SNUID": get_snuid(random.choice(user_agents), getValidProxy()),
             "IPLOC":"CN5101",
             "JSESSIONID":"aaalw50R4h-H-bQWvfD8w",
             "successCount":"1|Thu, 26 Dec 2019 06:48:53 GMT"
         }
-        ip_list = get_ip_list(url, headers=headers)
-        proxies_t = random.choice(proxies)
-        #如果使用代理则没有抓取到正确的网页html源代码
-        #r = requests.get(url,headers =headers, proxies=proxies_t)
-        r = requests.get(url, headers=headers, cookies=cookies)
+        r = requests.get(url, headers=headers,proxies = getValidProxy(),  cookies=cookies)
         # print(r.text)
         # return r.text.encode(r.encoding).decode("utf-8")
         return r.text
@@ -170,8 +181,6 @@ class WeiXinSearch():
         url_code = parse.quote(search_word)
         self.__search_url = "http://weixin.sogou.com/weixin?type=2&query={}".format(url_code)
 
-    def initParams(self):
-        time.sleep(1.5)
 
     #传入需要搜索的网址
     def set_search_url(self, url):
@@ -211,8 +220,15 @@ class WeiXinSearch():
         if len(self.page_url_list) == 0:
             print("Please get page url list!")
             exit(0)
+        print("page_len"+str(len(self.page_url_list)))
         for url in self.page_url_list:
             url_list = self.__search_page_article(url)
+            try:
+                tmpfile = open('pageurlList.txt', 'a+')
+                for i in range(0, len(url_list)):
+                    tmpfile.write(url_list[i]+'\n')
+            finally:
+                tmpfile.close()
             self.article_url_list.extend(url_list)
         return self.article_url_list
 
@@ -235,12 +251,13 @@ class WeiXinSearch():
         url_list = []
         content_list = []
         for i in h3_all_div:
-            url = i.a.get("data-share")
-            url_list.append('https://weixin.sogou.com/' + url)
+            url = i.a.get("href")
+            url_list.append('https://weixin.sogou.com'+url)
+            #url_list.append(get_real_url('https://weixin.sogou.com' + url, getValidProxy()))
         if len(url_list)==0:
             print("Wrong")
             exit(0)
-        return content_list
+        return url_list
 
     def get_page_content(self, url):
         page_content = get_content(url)
@@ -271,10 +288,10 @@ class WeiXinSearch():
         self.set_search_url(search_url)
         self.__get_search_page_content()
         self.__get_page_list()
-        #self.list = self.get_article_list()
-        #self.self_list = self.list
-        #li = self.self_list
-        li = self.page_url_list
+        self.list = self.get_article_list()
+        self.self_list = self.list
+        li = self.self_list
+        #li = self.page_url_list
         return li
         # fileObject = open('url_3.txt','w')
         # for i in li:

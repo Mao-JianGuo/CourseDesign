@@ -194,7 +194,7 @@ def auto_main():
     logging.info("Ip数量:{}，用时：{}".format(len(proxies), end_time-start_time))
 
     data = json.dumps(proxies)
-    WXS.store_file("proxies.json", data)
+    WXS.store_file("proxiess.txt", data)
     return proxies
 
 def another_test():
